@@ -49,7 +49,7 @@ min_neighbors = 3
 min_size = (30, 30)
 flags = cv2.CASCADE_SCALE_IMAGE
 
-
+print('[')
 for infname in sys.argv[1:]:
    image_path = os.path.expanduser(infname)
    image = cv2.imread(image_path)
@@ -65,3 +65,4 @@ for infname in sys.argv[1:]:
      row =  { 'ts': currenttime, 'endtime': endtime, 'host': host, 'memory': mempercent, 'diskfree': diskrootfree, 'cputemp': round(ctemp,2), 'ipaddress': ipaddress, 'x': x, 'y': y, 'w': w, 'h': h, 'filename': outfname }
      json_string = json.dumps(row)
      print(json_string)
+print(']')
